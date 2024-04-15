@@ -19,14 +19,17 @@ def muestra_lista(lista):
         {}      {}          {}
         """.format(producto[0], producto[1], producto[2]))
         
-while True:    
-    menu=""" \n
-    MENU PRODUCTOS
-    1) Agregar        2) Eliminar 
-    3) Ver            4) Finalizar compra
-    5) Salir
-    """
+total_compra = 0         
+while True:   
+   
+    menu=   """ \n
+                MENU PRODUCTOS
+                1) Agregar        2) Eliminar 
+                3) Ver            4) Finalizar compra
+                5) Salir
+            """
     muestra_lista(lista_compras)
+    print("Total: ",total_compra)
     print(menu)    
     try:
         seleccion = int(input("Ingrese opción:"))   
@@ -42,11 +45,13 @@ while True:
         producto_nombre = input("Ingrese nombre de producto: ")
         producto_precio = float(input("Ingrese precio: "))
         lista_compras.append([i, producto_nombre, producto_precio])
+        total_compra = calcula_total(lista_compras)
     if seleccion == 2:
         id_producto_eliminar = int(input("Ingrese el id de producto a eliminar: "))   
         for elemento in lista_compras:
             if elemento[0] == id_producto_eliminar:
-                lista_compras.remove(elemento)    
+                lista_compras.remove(elemento)   
+                total_compra = calcula_total(lista_compras) 
     if seleccion == 3:               
         muestra_lista(lista_compras)
     if seleccion == 4:
