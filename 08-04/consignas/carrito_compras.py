@@ -10,10 +10,10 @@ def calcula_total(lista):
     return total 
 
 def muestra_lista(lista):
-    print("""
-        Carrito:
-        Id     Nombre     Precio 
-    """)
+    print(  """
+                Carrito:
+                Id     Nombre     Precio 
+            """)
     for producto in lista:
         print("""     
         {}      {}          {}
@@ -46,14 +46,16 @@ while True:
         id_producto_eliminar = int(input("Ingrese el id de producto a eliminar: "))   
         for elemento in lista_compras:
             if elemento[0] == id_producto_eliminar:
-                lista_compras.remove(elemento)       
+                lista_compras.remove(elemento)    
+    if seleccion == 3:               
+        muestra_lista(lista_compras)
     if seleccion == 4:
-         print("Compra Finalizada")
-         muestra_lista(lista_compras)
-         total_compra = calcula_total(lista_compras)
-         print("Total: ",total_compra)
-         break
+        print("Compra Finalizada")
+        muestra_lista(lista_compras)
+        total_compra = calcula_total(lista_compras)
+        print("Total: ",total_compra)
+        break
     if seleccion == 5:
         break
-         
+    
         
