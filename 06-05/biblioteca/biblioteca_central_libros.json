@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "año_publicacion": 1949,
+        "disponible": true,
+        "unidades": 3
+    },
+    {
+        "id": 2,
+        "titulo": "Cien Años de Soledad",
+        "autor": "Gabriel García Márquez",
+        "año_publicacion": 1967,
+        "disponible": true,
+        "unidades": 2
+    }
+]

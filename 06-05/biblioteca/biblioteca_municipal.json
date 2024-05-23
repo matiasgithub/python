@@ -1,0 +1,23 @@
+[
+    {
+        "titulo": "Orgullo y Prejuicio",
+        "autor": "Jane Austen",
+        "año_publicacion": 1813,
+        "unidades": 3,
+        "disponible": true
+    },
+    {
+        "titulo": "Matar a un ruiseñor",
+        "autor": "Harper Lee",
+        "año_publicacion": 1960,
+        "unidades": 2,
+        "disponible": true
+    },
+    {
+        "titulo": "Crimen y Castigo",
+        "autor": "Fyodor Dostoevsky",
+        "año_publicacion": 1866,
+        "unidades": 4,
+        "disponible": true
+    }
+]
