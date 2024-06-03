@@ -68,7 +68,10 @@ class Biblioteca:
     @classmethod
     def cargar_desde_json(cls, nombre, archivo):
         biblioteca = cls(nombre)
-        ruta = os.path.join(os.path.dirname(__file__), archivo)        
+        ruta = os.path.join(os.path.dirname(__file__), archivo)
+        if not os.path.exists(ruta):
+            print(f"Archivo '{archivo}' no encontrado.")
+            return None
         try:
             with open(ruta, 'r') as file:
                 libros_data = json.load(file)
@@ -76,4 +79,8 @@ class Biblioteca:
                     biblioteca.agregar_libro(Libro.desde_diccionario(libro_data))
         except FileNotFoundError:
             print(f"Archivo '{archivo}' no encontrado.")
+            return None
+        except json.JSONDecodeError:
+            print(f"Error al decodificar el archivo '{archivo}'.")
+            return None
         return biblioteca          
