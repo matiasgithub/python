@@ -18,10 +18,13 @@ class Libro:
                 "disponible": self.disponible,
                 "unidades": self.unidades
             }
-        
+
+    #permite crear una instancia de la clase Libro a partir de un diccionario de datos        
     @classmethod    
     def desde_diccionario(cls, data):        
-        return cls(data["titulo"], data["autor"], data["año_publicacion"], data["unidades"])         
+        libro = cls(data["titulo"], data["autor"], data["año_publicacion"], data["unidades"])
+        libro.id = data.get("id", Libro.ultimo_id)
+        return libro         
     
     def prestar(self):
         if self.unidades > 0:
